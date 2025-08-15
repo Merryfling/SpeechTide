@@ -1,0 +1,31 @@
+# Core GUI Framework
+rumps>=0.4.0              # Mac status bar applications
+PyQt6>=6.5.0              # Modern GUI framework for floating window
+
+# macOS Integration
+pyobjc-framework-Cocoa>=9.0; sys_platform == "darwin"  # macOS native integration for Accessory mode
+
+# Audio Processing
+pyaudio>=0.2.11           # Audio recording and playback
+numpy>=1.24.0             # Audio data processing and visualization
+
+# System Integration
+pynput>=1.7.6             # Global hotkeys and text injection
+pyautogui>=0.9.54         # Alternative text input method
+
+# OpenAI Integration
+openai>=1.0.0             # OpenAI API client
+websockets>=11.0          # WebSocket support for real-time API
+requests>=2.31.0          # HTTP requests
+
+# Configuration & Utilities
+python-dotenv>=1.0.0      # Environment variable management
+aiohttp>=3.8.0            # Async HTTP client for real-time APIs
+
+# Development Tools
+pytest>=7.0.0             # Testing framework
+black>=23.0.0             # Code formatting
+flake8>=6.0.0             # Code linting
+
+# Network Support
+socksio>=1.0.0            # SOCKS proxy support for network environments

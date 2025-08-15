@@ -1,0 +1,38 @@
+{
+  "openai": {
+    "api_key": "",
+    "base_url": "https://api.openai.com/v1",
+    "model_realtime": "gpt-4o-mini-realtime-preview",
+    "model_transcribe": "gpt-4o-mini"
+  },
+  "hotkeys": {
+    "primary": "right_cmd",
+    "secondary": "right_option"
+  },
+  "ui": {
+    "window_position": "bottom_center",
+    "show_animation": true,
+    "auto_hide_delay": 2.0,
+    "floating_window": {
+      "width": 400,
+      "height": 100,
+      "opacity": 0.9
+    }
+  },
+  "audio": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "chunk_size": 1024,
+    "format": "int16"
+  },
+  "behavior": {
+    "auto_start_threshold": 0.01,
+    "silence_timeout": 2.0,
+    "max_recording_duration": 60.0
+  },
+  "logging": {
+    "enable_conversation_logging": true,
+    "log_level": "INFO",
+    "max_log_files": 10
+  }
+}
