@@ -8,7 +8,7 @@ A powerful voice input application for macOS that provides seamless speech-to-te
 - **Status Bar Integration**: Lightweight menu bar presence with clean interface
 - **Dual Recognition Modes**:
   - GPT-4o-mini-realtime-preview for real-time streaming transcription
-  - GPT-4o-mini-transcribe for batch transcription
+  - Configurable transcription model for batch transcription (supports gpt-4o-mini, gpt-4o-mini-transcribe, whisper-1, etc.)
 - **Global Hotkeys**: Activate with Right Command or Right Option keys
 - **Smart Input**: Click to start/stop or long press until speech completion
 - **Floating UI**: Voice visualization window (bottom center or below notch)
@@ -65,7 +65,7 @@ cp config/settings.example.json config/settings.json
     "api_key": "your-api-key-here",
     "base_url": "https://api.openai.com/v1",
     "model_realtime": "gpt-4o-mini-realtime-preview", 
-    "model_transcribe": "gpt-4o-mini"
+    "model_transcribe": "gpt-4o-mini-transcribe"
   },
   "hotkeys": {
     "primary": "right_cmd",
@@ -78,6 +78,13 @@ cp config/settings.example.json config/settings.json
   }
 }
 ```
+
+**Transcription Model Options:**
+- `gpt-4o-mini-transcribe`: OpenAI's latest transcription model (recommended)
+- `gpt-4o-mini`: General-purpose model
+- `whisper-1`: OpenAI's Whisper model
+
+**Note:** Recent fix ensures the configured transcription model is actually used instead of defaulting to whisper-1.
 
 ### Permissions
 SpeechTide requires the following macOS permissions:
@@ -125,6 +132,14 @@ pytest tests/
 - **API Security**: API keys encrypted and stored in system keychain
 - **No Telemetry**: No usage data or audio sent to third parties
 - **Open Source**: Full source code available for audit
+
+## Recent Updates
+
+### Transcription Model Configuration Fix
+- **Fixed**: Transcription now properly uses the configured model instead of defaulting to whisper-1
+- **Impact**: Your OpenAI billing will now correctly reflect the model specified in `model_transcribe` setting
+- **Affected**: All transcription operations (batch mode)
+- **Real-time**: Real-time mode continues to use whisper-1 as required by the real-time API
 
 ## Troubleshooting
 

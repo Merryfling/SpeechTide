@@ -63,7 +63,7 @@ class OpenAIClient:
             
             # Prepare API call parameters
             api_params = {
-                "model": "whisper-1",  # Currently the main Whisper model
+                "model": model,
                 "file": audio_file,
                 "response_format": "text"
             }
@@ -84,11 +84,12 @@ class OpenAIClient:
             self.logger.error(f"Transcription failed: {e}", exc_info=True)
             raise
     
-    def transcribe_audio_with_timestamps(self, audio_data: bytes) -> Dict[str, Any]:
+    def transcribe_audio_with_timestamps(self, audio_data: bytes, model: str = "whisper-1") -> Dict[str, Any]:
         """Transcribe audio with word-level timestamps.
         
         Args:
             audio_data: Audio data in WAV format
+            model: Model to use for transcription
             
         Returns:
             Dictionary with transcription and timestamp information
@@ -98,7 +99,7 @@ class OpenAIClient:
             audio_file.name = "audio.wav"
             
             response = self.client.audio.transcriptions.create(
-                model="whisper-1",
+                model=model,
                 file=audio_file,
                 response_format="verbose_json",
                 timestamp_granularities=["word"]
@@ -169,7 +170,7 @@ class OpenAIClient:
                 "input_audio_format": "pcm16",
                 "output_audio_format": "pcm16",
                 "input_audio_transcription": {
-                    "model": "whisper-1"
+                    "model": "whisper-1"  # Real-time API may require specific models
                 },
                 "turn_detection": {
                     "type": "server_vad",
