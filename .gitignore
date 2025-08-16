@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Configuration files with sensitive data
+config/settings.json
+config/api_keys.json
+.env.local
+
+# Local conversation logs (these should not be committed)
+conversations/
+logs/
+*.log
+
+# Development conversation logs (LOCAL ONLY - DO NOT COMMIT)
+dev_conversations/
+dev_logger.py
+
+# Audio files
+*.wav
+*.mp3
+*.aac
+*.m4a
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# PyQt UI files
+*.ui.py
+
+# Application specific
+speechtide.app/
+*.dmg
+*.pkg
